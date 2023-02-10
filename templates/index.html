@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form class="grid gap-3" method="post" action="/">
+        <div class="text-4xl font-black uppercase tracking-wider">Ardillitas</div>
+
+        <p class="text-xl">Convierte cualquier cancion a ardillitas!</p>
+
+        <p class="text-xl">
+            Una platafotma de fácil acceso para poder hacer tus propias ardillitas canciones con un solo click
+        </p>
+
+        <input type="text"
+               name="url"
+               class="foucs:ring-0 rounded border border-red-500 px-4 py-8 text-sm focus:border-red-300 focus:outline-none"
+               placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
+
+        <div class="text-right">
+            <button class="inline rounded bg-red-500 p-3 text-center font-bold uppercase tracking-widest text-white transition hover:bg-red-600 active:scale-95 active:bg-red-400">
+                Ardillizar
+            </button>
+        </div>
+    </form>
+
+    <div class="border-t my-4"></div>
+    <div class="text-xl font-black uppercase tracking-wider">Qué dicen nuestros clientes?</div>
+    <img src="/static/testimonio-01.png" alt="">
+{% endblock %}
