@@ -41,7 +41,7 @@ async def index_post(request: Request, url: str = Form()):
 
     if not os.path.exists(f'static/downloads/{mp3_name}.mp3'):
         print("running job!!!")
-        process = subprocess.Popen(['python', 'download.py', url, mp3_name],
+        process = subprocess.Popen(['python3', 'download.py', url, mp3_name],
                                    stdout=subprocess.PIPE,
                                    stderr=subprocess.DEVNULL,
                                    )
