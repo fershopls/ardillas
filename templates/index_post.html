@@ -1,14 +1,31 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<p class="mt-5 px-2 text-xl font-black tracking-widest">Video original</p>
+
+<div class="border p-2 rounded shadow-xl grid gap-4">
+    <div class="relative">
+        <img src="/static/ardillas.png" class="absolute inset-0 bg-center">
+        <img src="{{ thumb }}" alt="">
+    </div>
+    <div class="">
+        <p class="text-xl">{{ title }}</p>
+        <div class="text-sm text-gray-500">{{ url }}</div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="/"
+       class="inline rounded bg-blue-500 p-3 text-center font-bold uppercase tracking-widest text-white transition hover:bg-blue-600 active:scale-95 active:bg-blue-400">
+        Volver al inicio
+    </a>
+</div>
 
 {% if download_url %}
 
-<div class="text-4xl font-black">
+<div class="mt-4 text-4xl font-black">
     Ardillizado con éxito! 🎵🥳
 </div>
-
-<img src="/static/ardillas.jpg" alt="">
 
 <div class="mt-4">
     <div class="bg-gray-200 border border-gray-400 px-2 py-4 grid gap-1">
@@ -42,7 +59,7 @@
     </div>
 </div>
 {% else %}
-<div class="text-4xl font-black">
+<div class="mt-4 text-4xl font-black">
 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
          class="w-12 h-12 animate-spin inline">
@@ -61,21 +78,7 @@ setTimeout(() => {
 </script>
 {% endif %}
 
-<p class="mt-5 px-2 text-xl font-black tracking-widest">Video original</p>
-
-<div class="border p-2 rounded shadow-xl grid gap-4">
-    <img src="{{ thumb }}" alt="">
-    <div class="">
-        <p class="text-xl">{{ title }}</p>
-        <div class="text-sm text-gray-500">{{ url }}</div>
-    </div>
-</div>
-
-<div class="mt-4">
-    <a href="/"
-       class="inline rounded bg-blue-500 p-3 text-center font-bold uppercase tracking-widest text-white transition hover:bg-blue-600 active:scale-95 active:bg-blue-400">
-        Volver al inicio
-    </a>
-</div>
 <div class="py-12"></div>
 {% endblock %}
+
+
