@@ -1,3 +1,5 @@
 /venv
 /static/downloads
 .idea
+__pycache__
+*.pyc
