@@ -22,7 +22,7 @@ def main(url):
     streams = video.streams.filter(only_audio=True)
     streams.first().download(filename=mp4_file)
 
-    cmd = f'ffmpeg -i {mp3_name}.mp4 -c:a aac -af asetrate=44100*1.75,aresample=44100,atempo=1/1.75 "static/downloads/{mp3_name}.mp3"'
+    cmd = f'ffmpeg -y -i {mp3_name}.mp4 -af asetrate=44100*1.75,aresample=44100,atempo=1/1.75 -c:a libmp3lame "static/downloads/{mp3_name}.mp3"'
     print(cmd)
     os.system(cmd)
     os.remove(mp4_file)
